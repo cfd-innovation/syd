@@ -49,7 +49,7 @@ bundle install
 bundle exec jekyll serve
 ```
 
-Accédez à `http://localhost:4000/syd-documentation/`
+Accédez à `http://localhost:4000/syd/`
 
 ## Déploiement sur GitHub Pages
 
