@@ -1,0 +1,68 @@
+title: SYD - Start Your Dashboard
+description: Documentation utilisateur pour SYD Builder et SYD Visualizer
+baseurl: "/syd-documentation"
+url: "https://cfd-innovation.github.io"
+
+# Thème Just the Docs pour une navigation latérale claire
+remote_theme: just-the-docs/just-the-docs
+
+# Couleur principale
+color_scheme: light
+
+# Paramètres de navigation
+nav_sort: case_insensitive
+
+# Activation de la recherche
+search_enabled: true
+search:
+  heading_level: 2
+  previews: 3
+  preview_words_before: 5
+  preview_words_after: 10
+  tokenizer_separator: /[\s/]+/
+  rel_url: true
+  button: false
+
+# Footer
+footer_content: "Copyright &copy; 2024-2026 CFD Innovation. Distribué sous licence propriétaire."
+
+# Liens externes
+aux_links:
+  "Site CFD Innovation":
+    - "https://cfd-innovation.fr/syd-start-your-dashboard/"
+
+# Activer le bouton "Retour en haut"
+back_to_top: true
+back_to_top_text: "Retour en haut"
+
+# Favicon
+favicon_ico: "/assets/img/favicon.ico"
+
+# Plugins
+plugins:
+  - jekyll-seo-tag
+
+# Collections pour organiser le contenu
+collections:
+  builder:
+    output: true
+    permalink: /:collection/:path/
+  visualizer:
+    output: true
+    permalink: /:collection/:path/
+
+# Valeurs par défaut pour les collections
+defaults:
+  - scope:
+      path: ""
+      type: "builder"
+    values:
+      layout: "default"
+      parent: "SYD Builder"
+  - scope:
+      path: ""
+      type: "visualizer"
+    values:
+      layout: "default"
+      parent: "SYD Visualizer"
+
