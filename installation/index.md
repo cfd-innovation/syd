@@ -26,6 +26,6 @@ Pour toute demande d'installation, de mise à jour ou de configuration de votre 
 
 Pour planifier une installation ou obtenir plus d'informations :
 
-- Contactez le support **CFD-Innovation**
+- Contactez le support **CFD-Innovation** support@cfd-innovation.fr
 - Nos équipes techniques se chargeront de l'ensemble du processus d'installation et de configuration adapté à votre infrastructure
 
