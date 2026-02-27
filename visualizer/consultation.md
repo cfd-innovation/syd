@@ -19,7 +19,7 @@ Navigation et interaction avec les tableaux de bord
 
 Après connexion, le menu de navigation affiche les dashboards auxquels vous avez accès, organisés par catégories.
 
-<!-- ![Menu navigation]({{ site.baseurl }}/assets/img/visualizer/navigation.png) -->
+![Menu Visualizer]({{ site.baseurl }}/assets/img/visualizer/Menu_Visualizer.png)
 
 ### Accéder à un dashboard
 
@@ -29,7 +29,7 @@ Après connexion, le menu de navigation affiche les dashboards auxquels vous ave
 
 ### Dashboard par défaut
 
-Si configuré, un dashboard s'affiche automatiquement après la connexion.
+Si configuré côté builder, un dashboard s'affiche automatiquement après la connexion.
 
 ---
 
@@ -42,7 +42,6 @@ Un dashboard se compose de plusieurs éléments :
 │                    BARRE DE NAVIGATION                      │
 ├─────────────────────────────────────────────────────────────┤
 │  Titre du Dashboard                                         │
-│  Sous-titre                                                 │
 ├─────────────────────────────────────────────────────────────┤
 │  [Formulaire de filtres - si configuré]                     │
 ├─────────────────────────────────────────────────────────────┤
@@ -70,6 +69,8 @@ Passez votre souris sur un élément d'un graphique pour afficher un **tooltip**
 - Pourcentage (pour les camemberts)
 - Informations des séries multiples
 
+![Tooltip Visualizer]({{ site.baseurl }}/assets/img/visualizer/Tooltip_visualizer.png)
+
 ### Légende interactive
 
 La légende des graphiques est interactive :
@@ -78,6 +79,8 @@ La légende des graphiques est interactive :
 |:-------|:------|
 | **Clic simple** sur une série | Masque/affiche la série |
 | **Survol** d'une série | Met en évidence la série |
+
+![Légendes Visualizer]({{ site.baseurl }}/assets/img/visualizer/Legendes_visualizer.png)
 
 ### Exemple
 
@@ -101,15 +104,22 @@ Pour un graphique avec les séries "Ventes 2023" et "Ventes 2024" :
 
 ### Tableaux
 
-| Fonction | Description |
-|:---------|:------------|
-| **Tri** | Cliquez sur l'en-tête pour trier |
-| **Recherche** | Utilisez le champ de recherche (si activé) |
-| **Pagination** | Naviguez entre les pages |
+| Fonction | Description                                                   |
+|:---------|:--------------------------------------------------------------|
+| **Tri** | (Option à activer) Cliquez sur l'en-tête pour trier           |
+| **Recherche** | (Option à activer) Utilisez le champ de recherche (si activé) |
+| **Pagination** | (Option à activer) Naviguez entre les pages                   |
+
+
+![Tableau Visualizer]({{ site.baseurl }}/assets/img/visualizer/tableaux_visualizer.png)
+
 
 ### Indicateurs
 
 Les indicateurs affichent une valeur clé. Pas d'interaction particulière.
+
+![Indicateur Visualizer]({{ site.baseurl }}/assets/img/visualizer/Module_SYD_Visualizer.png)
+
 
 ### Cartes
 
@@ -118,6 +128,11 @@ Les indicateurs affichent une valeur clé. Pas d'interaction particulière.
 | **Survol** | Affiche les infos de la zone |
 | **Zoom** | Molette ou boutons +/- |
 | **Déplacement** | Cliquer-glisser |
+
+
+![Maps bubble Visualizer]({{ site.baseurl }}/assets/img/visualizer/maps_bubble_visualizer.png)
+![Maps choroplèthes Visualizer]({{ site.baseurl }}/assets/img/visualizer/maps_choro_visualizer.png)
+
 
 ---
 
@@ -141,9 +156,24 @@ Si le dashboard dispose de filtres :
 | **Liste simple** | Un seul choix | Région |
 | **Liste multiple** | Plusieurs choix | Plusieurs produits |
 
+![Filtres Visualizer]({{ site.baseurl }}/assets/img/visualizer/Filtres_visualizer.png)
+
+### Mode compact des filtres
+
+Les filtres peuvent être affichés en mode **compact** (réduit) pour gagner de l'espace sur le dashboard. Dans ce mode :
+
+- Les filtres sont repliés et occupent moins de place
+- Les **valeurs sélectionnées** s'affichent sous forme de **badges** directement visibles
+- Cliquez sur un badge pour modifier rapidement la valeur du filtre correspondant
+
+{: .note }
+> Le mode compact est particulièrement utile lorsque le dashboard contient de nombreux filtres ou pour maximiser l'espace d'affichage des modules.
+
+![Filtres badge Visualizer]({{ site.baseurl }}/assets/img/visualizer/filtres_badge_visualizer.png)
+
 ### Réinitialisation
 
-Pour revenir aux valeurs par défaut, rechargez la page ou utilisez le bouton de réinitialisation (si disponible).
+Pour revenir aux valeurs par défaut, rechargez la page.
 
 ---
 
