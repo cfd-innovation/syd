@@ -89,8 +89,29 @@ mysql:host=servername;dbname=myDB
 > **Sécurité** : Utilisez des comptes de base de données avec des droits limités en lecture seule lorsque c'est possible.
 
 - **Nommage** : Utilisez des labels explicites pour identifier facilement vos connexions
-- **Test** : Testez votre connexion après la création en créant une requête simple
 - **Documentation** : Notez les informations de connexion dans un document sécurisé
+
+---
+
+## Tester une connexion
+
+Un bouton **Test** est disponible pour vérifier la connexion à la base de données.
+
+### Procédure
+
+1. Dans la liste des connecteurs, repérez la connexion à tester
+2. Cliquez sur le bouton **Test**
+3. Le résultat s'affiche dans la colonne **État**
+
+### Résultats possibles
+
+| État | Affichage | Signification |
+|:-----|:----------|:--------------|
+| ✅ Succès | Bouton vert **Connecté** | La connexion à la base de données fonctionne |
+| ❌ Échec | Bouton rouge **Echec** | La connexion a échoué (vérifiez les paramètres) |
+
+{: .note }
+> En cas d'échec, vérifiez les paramètres de connexion (host, identifiants, nom de la base) et consultez la section Dépannage ci-dessous.
 
 ---
 

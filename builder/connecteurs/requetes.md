@@ -71,8 +71,8 @@ WHERE actif = 1
 
 ```sql
 SELECT 
-    DATE_FORMAT(date_vente, '%Y-%m') as mois,
-    SUM(montant) as total_ventes
+    DATE_FORMAT(date_vente, '%Y-%m') as X,
+    SUM(montant) as Y
 FROM ventes
 WHERE YEAR(date_vente) = 2024
 GROUP BY DATE_FORMAT(date_vente, '%Y-%m')
@@ -88,13 +88,27 @@ SELECT
     prix_unitaire,
     quantite * prix_unitaire as total
 FROM commandes
-WHERE date_commande BETWEEN '{{date_debut}}' AND '{{date_fin}}'
-  AND region = '{{region}}'
+WHERE date_commande BETWEEN '###date_debut###' AND '###date_fin###'
+  AND region = '###region###'
+ORDER BY date_commande DESC
+```
+
+ou pour les valeurs multiples : 
+
+```sql
+SELECT 
+    produit,
+    quantite,
+    prix_unitaire,
+    quantite * prix_unitaire as total
+FROM commandes
+WHERE region IN '&&&region&&&'
 ORDER BY date_commande DESC
 ```
 
 {: .note }
-> Les paramètres entre doubles accolades `{{param}}` sont remplacés par les valeurs des champs de formulaire correspondants.
+> Les paramètres entre triples dièses `###param###` sont remplacés par les valeurs des champs de formulaire correspondants.
+> Les paramètres entre triples & `&&&param&&&` sont remplacés par les valeurs multiples du champs associé.
 
 ---
 
@@ -102,32 +116,39 @@ ORDER BY date_commande DESC
 
 Pour les graphiques, la requête doit retourner des colonnes correspondant aux axes :
 
-| Type de module | Colonnes attendues |
-|:---------------|:-------------------|
-| **Line, Bar** | 1 colonne X (labels) + N colonnes Y (valeurs) |
-| **Pie, Doughnut** | 1 colonne labels + 1 colonne valeurs |
-| **Table** | Toutes les colonnes souhaitées |
-| **Indicator** | 1 valeur numérique |
-| **Gauge, Progress** | 1 valeur numérique (pourcentage) |
+| Type de module                      | Colonnes attendues                               |
+|:------------------------------------|:-------------------------------------------------|
+| **Line, Bar, Pie, Doughnut, Maps ** | 1 colonne as X (labels) + N colonnes Y (valeurs) |
+| **Table**                           | Toutes les colonnes souhaitées                   |
+| **Indicator**                       | 1 valeur as X                                    |
+| **Gauge, Progress**                 | 1 valeur numérique as X (pourcentage)            |
 
-### Exemple pour un graphique Line/Bar
+### Graphiques multi-séries avec la colonne Z
+
+Pour créer des graphiques **multi-séries** dynamiques, vous pouvez utiliser une colonne aliasée **`as Z`**. Cette colonne définit le nom de chaque série.
+
+| Alias | Rôle |
+|:------|:-----|
+| **X** | Labels de l'axe horizontal |
+| **Y** | Valeurs de l'axe vertical |
+| **Z** | Nom de la série (pour multi-séries) |
+
+### Exemple multi-séries
+
+Afficher les ventes mensuelles par année (chaque année devient une série) :
 
 ```sql
 SELECT 
-    mois,           -- Axe X (labels)
-    ventes_2023,    -- Série 1
-    ventes_2024     -- Série 2
-FROM statistiques_mensuelles
-ORDER BY mois
+    YEAR(O.ORDERDATE) Z,  
+    MONTH(O.ORDERDATE) X, 
+    SUM(LINETOTAL) Y
+FROM ORDERS O
+GROUP BY MONTH(O.ORDERDATE), YEAR(O.ORDERDATE)
+ORDER BY Z, X
 ```
 
-### Exemple pour un indicateur
-
-```sql
-SELECT SUM(montant) as chiffre_affaires
-FROM ventes
-WHERE YEAR(date_vente) = YEAR(CURRENT_DATE)
-```
+{: .note }
+> Dans cet exemple, chaque année (2023, 2024...) devient une série distincte sur le graphique, avec les mois en abscisse et le total des ventes en ordonnée.
 
 ---
 
