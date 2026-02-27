@@ -181,11 +181,11 @@ Pour revenir aux valeurs par défaut, rechargez la page.
 
 Chaque module peut disposer d'outils dans sa barre de titre :
 
-| Icône | Fonction | Description |
-|:------|:---------|:------------|
-| 🔄 | **Refresh** | Rafraîchir les données du module |
-| 📥 | **Excel** | Exporter les données en Excel |
-| 🔍 | **Recherche** | Champ de recherche (tableaux) |
+| Icône                                                                        | Fonction | Description |
+|:-----------------------------------------------------------------------------|:---------|:------------|
+| ![Icone refresh]({{ site.baseurl }}/assets/img/visualizer/icone_refresh.png) | **Refresh** | Rafraîchir les données du module |
+| ![Icone excel]({{ site.baseurl }}/assets/img/visualizer/icone_excel.png)     | **Excel** | Exporter les données en Excel |
+| ![Icone search]({{ site.baseurl }}/assets/img/visualizer/icone_search.png)   | **Recherche** | Champ de recherche (tableaux) |
 
 ---
 
