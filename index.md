@@ -102,9 +102,9 @@ Interface de consultation destinée aux **utilisateurs finaux** pour :
 [//]: # (> Les captures d'écran seront ajoutées progressivement dans le dossier `assets/img/`.)
 
 <!-- Placeholder pour les futures captures -->
- ![Mire de connexion]({{ site.baseurl }}/assets/builder/Capture_mire_de_connexion.jpg) 
- ![Liste des modules dans le Builder]({{ site.baseurl }}/assets/builder/Dashboard_demo_liste_des_modules.png) 
- ![Dashboard Visualizer]({{ site.baseurl }}/assets/visualizer/Dashboard_demo_dark_mode_1.png) 
+ ![Mire de connexion]({{ site.baseurl }}/assets/img/builder/Capture_mire_de_connexion.jpg) 
+ ![Liste des modules dans le Builder]({{ site.baseurl }}/assets/img/builder/Dashboard_demo_liste_des_modules.png) 
+ ![Dashboard Visualizer]({{ site.baseurl }}/assets/img/visualizer/Dashboard_demo_dark_mode_1.png) 
 
 ---
 
