@@ -27,7 +27,7 @@ Le produit se compose de deux parties distinctes :
 {: .text-purple-300 }
 
 Interface de conception destinée aux **informaticiens et développeurs** pour :
-- Configurer les connecteurs de données (bases de données, webservices)
+- Configurer les connecteurs de bases de données 
 - Créer et configurer des modules de visualisation (graphiques, tableaux, indicateurs, cartes...)
 - Assembler les tableaux de bord
 - Gérer les utilisateurs et leurs droits d'accès
@@ -56,8 +56,8 @@ Interface de consultation destinée aux **utilisateurs finaux** pour :
 │  ┌─────────────┐ ┌─────────────┐ ┌─────────────────────────┐│
 │  │ Connecteurs │ │   Modules   │ │      Dashboards         ││
 │  │  - BDD      │ │  - Charts   │ │  - Layout               ││
-│  │  - WS       │ │  - Tables   │ │  - Utilisateurs         ││
-│  │  - Requêtes │ │  - Maps     │ │  - Catégories           ││
+│  │  - Requêtes │ │  - Tables   │ │  - Utilisateurs         ││
+│  │             │ │  - Maps     │ │  - Catégories           ││
 │  └─────────────┘ └─────────────┘ └─────────────────────────┘│
 └─────────────────────────────────────────────────────────────┘
                               │
@@ -98,24 +98,28 @@ Interface de consultation destinée aux **utilisateurs finaux** pour :
 ## Captures d'écran
 
 {: .note }
-> Les captures d'écran seront ajoutées progressivement dans le dossier `assets/img/`.
+
+[//]: # (> Les captures d'écran seront ajoutées progressivement dans le dossier `assets/img/`.)
 
 <!-- Placeholder pour les futures captures -->
-<!-- ![Dashboard Builder]({{ site.baseurl }}/assets/img/builder-dashboard.png) -->
-<!-- ![Dashboard Visualizer]({{ site.baseurl }}/assets/img/visualizer-dashboard.png) -->
+ ![Mire de connexion]({{ site.baseurl }}/assets/builder/Capture_mire_de_connexion.jpg) 
+ ![Liste des modules dans le Builder]({{ site.baseurl }}/assets/builder/Dashboard_demo_liste_des_modules.png) 
+ ![Dashboard Visualizer]({{ site.baseurl }}/assets/visualizer/Dashboard_demo_dark_mode_1.png) 
 
 ---
 
 ## Prérequis techniques
 
-- **Serveur web** : Apache ou Nginx avec PHP 7.4+
-- **Base de données** : MySQL 5.7+ ou DB2
+- **Serveur hôte** : IBM i (V7R2+), Linux ou Windows
+- **Serveur web** : Apache avec PHP 7.4+
+- **Base de données** : DB2 for i ou MySQL 5.7+ / MariaDB
 - **Navigateur** : Chrome, Firefox, Edge (versions récentes)
 
 ---
 
 ## Liens utiles
 
-- [Site officiel CFD Innovation](https://cfd-innovation.fr/syd-start-your-dashboard/)
+- [Site officiel CFD Innovation](https://cfd-innovation.fr/)
 - [Présentation du produit](https://cfd-innovation.fr/syd-start-your-dashboard/)
+- [Témoignage client](https://cfd-innovation.fr/testimonial-schrader/)
 
