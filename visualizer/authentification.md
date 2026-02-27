@@ -17,7 +17,7 @@ Connexion et gestion des sessions utilisateur
 
 Pour accéder au Visualizer, vous devez vous authentifier via la page de connexion.
 
-<!-- ![Page de connexion]({{ site.baseurl }}/assets/img/visualizer/login.png) -->
+![Dashboard Visualizer]({{ site.baseurl }}/assets/img/visualizer/Mire_connexion_Visualizer.png)
 
 ### Champs de connexion
 
@@ -52,6 +52,29 @@ Le Visualizer supporte plusieurs langues :
 
 {: .note }
 > Le choix de la langue est conservé dans un cookie et mémorisé pour vos prochaines visites.
+
+---
+
+## Authentification SSO
+
+Le Visualizer peut être configuré pour utiliser l'authentification **SSO (Single Sign-On)**. Cette fonctionnalité permet aux utilisateurs de se connecter automatiquement avec leurs identifiants d'entreprise.
+
+### Avantages du SSO
+
+| Avantage | Description |
+|:---------|:------------|
+| **Connexion simplifiée** | Pas besoin de saisir un identifiant/mot de passe supplémentaire |
+| **Sécurité renforcée** | Authentification centralisée gérée par votre entreprise |
+| **Gestion unifiée** | Un seul compte pour toutes les applications |
+
+### Fonctionnement
+
+1. Accédez à l'URL sso du Visualizer
+2. Nous vérifions si vous êtes autorisé à utiliser le Visualizer
+3. Une fois authentifié, vous accédez directement au Visualizer
+
+{: .note }
+> La configuration du SSO est réalisée par l'administrateur SYD en coordination avec votre service informatique.
 
 ---
 

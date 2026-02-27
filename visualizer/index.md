@@ -36,6 +36,8 @@ Interface de consultation des tableaux de bord
 {: .note }
 > Certains dashboards peuvent être configurés en mode **public** et accessibles sans authentification.
 
+![Dashboard Visualizer]({{ site.baseurl }}/assets/img/visualizer/Mire_connexion_Visualizer.png)
+
 ---
 
 ## Interface principale
@@ -45,8 +47,7 @@ L'interface du Visualizer se compose de :
 ### 1. Barre de navigation
 
 - **Logo** : Retour à l'accueil
-- **Menu des dashboards** : Accès aux tableaux de bord disponibles
-- **Catégories** : Dashboards regroupés par thème
+- **Menu des dashboards** : Accès aux tableaux de bord disponibles organisés par Catégories
 - **Utilisateur** : Informations de connexion et déconnexion
 
 ### 2. Zone de contenu
@@ -62,6 +63,9 @@ Chaque module affiche :
 - **Visualisation** : Graphique, tableau, indicateur...
 - **Barre d'outils** : Actions disponibles (refresh, export...)
 
+![Module 1 Visualizer]({{ site.baseurl }}/assets/img/visualizer/Module_SYD_Visualizer.png)
+![Module 2 Visualizer]({{ site.baseurl }}/assets/img/visualizer/Module_SYD_Visualizer_2.png)
+
 ---
 
 ## Navigation
@@ -72,9 +76,12 @@ Chaque module affiche :
 2. Les dashboards sont organisés par **catégories**
 3. Cliquez sur le dashboard souhaité
 
+![Menu Visualizer]({{ site.baseurl }}/assets/img/visualizer/Menu_Visualizer.png)
+
+
 ### Dashboards favoris
 
-Selon la configuration, vous pouvez avoir un dashboard par défaut qui s'affiche à la connexion.
+Selon la configuration côté builder, vous pouvez avoir un dashboard par défaut qui s'affiche à la connexion.
 
 ---
 
@@ -87,15 +94,19 @@ Passez la souris sur un élément du graphique pour afficher les détails :
 - Libellé de la série
 - Informations complémentaires
 
+![Tooltip Visualizer]({{ site.baseurl }}/assets/img/visualizer/Tooltip_visualizer.png)
+
 ### Légende interactive
 
 Cliquez sur les éléments de la légende pour :
 - **Masquer** une série (clic simple)
 - **Afficher** une série masquée (clic à nouveau)
 
+![Légendes Visualizer]({{ site.baseurl }}/assets/img/visualizer/Legendes_visualizer.png)
+
 ### Zoom (certains graphiques)
 
-Pour les graphiques supportant le zoom :
+Pour les graphiques supportant le zoom (maps):
 - **Molette** : Zoom avant/arrière
 - **Clic glissé** : Sélection d'une zone
 
@@ -109,6 +120,8 @@ Si le dashboard dispose d'un formulaire de filtrage :
 2. Sélectionnez vos critères de filtrage
 3. Cliquez sur **Appliquer** (ou le bouton d'action)
 4. Les modules se rafraîchissent avec les données filtrées
+
+![Filtres Visualizer]({{ site.baseurl }}/assets/img/visualizer/Filtres_visualizer.png)
 
 ### Types de filtres
 
@@ -131,7 +144,7 @@ Pour les modules avec export activé :
 3. Le fichier `.xlsx` se télécharge automatiquement
 
 {: .note }
-> L'export prend en compte les filtres actifs. Les données exportées correspondent à la sélection en cours.
+> L'export prend en compte les filtres actifs. Les données exportées correspondent soit à la sélection en cours soit à une requête spécifique définie dans le builder.
 
 ---
 
@@ -139,7 +152,7 @@ Pour les modules avec export activé :
 
 ### Rafraîchissement automatique
 
-Certains modules sont configurés pour se rafraîchir automatiquement à intervalle régulier. Un indicateur peut signaler le prochain rafraîchissement.
+Certains modules sont configurés pour se rafraîchir automatiquement à intervalle régulier. Les données sont mises à jour sans intervention de l'utilisateur.
 
 ### Rafraîchissement manuel
 
@@ -149,9 +162,3 @@ Si le module dispose d'un bouton de rafraîchissement :
 2. Les données du module sont rechargées
 
 ---
-
-## Voir aussi
-
-- [Authentification]({{ site.baseurl }}/visualizer/authentification/)
-- [Types de modules]({{ site.baseurl }}/builder/modules/)
-

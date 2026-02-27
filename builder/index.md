@@ -18,7 +18,7 @@ Interface de conception des tableaux de bord
 
 **SYD Builder** est l'interface d'administration destinée aux informaticiens et développeurs. Elle permet de :
 
-- **Configurer les sources de données** : connexions aux bases de données, appels à des webservices
+- **Configurer les sources de données** : connexions aux bases de données
 - **Créer des requêtes** : écrire et tester les requêtes SQL qui alimenteront les modules
 - **Concevoir des modules** : créer des visualisations (graphiques, tableaux, indicateurs...)
 - **Assembler des dashboards** : disposer les modules sur une grille flexible
@@ -33,24 +33,22 @@ L'interface Builder propose les sections suivantes dans sa barre de navigation :
 
 | Section | Description |
 |:--------|:------------|
-| **Dashboards** | Liste et gestion des tableaux de bord |
-| **Modules** | Liste et gestion des modules de visualisation |
 | **Connecteurs** | Configuration des sources de données |
-| **Formulaires** | Création de formulaires de filtrage |
+| **Modules** | Liste et gestion des modules de visualisation |
+| **Dashboards** | Liste et gestion des tableaux de bord |
 | **Utilisateurs** | Gestion des utilisateurs |
-| **Groupes** | Gestion des groupes d'utilisateurs |
-| **Catégories** | Organisation des dashboards par catégories |
+| **Formulaires** | Création de formulaires de filtrage |
 | **GeoJSON** | Gestion des fichiers de cartographie |
-| **Licence** | Informations sur la licence |
+| **Licence** | Gestion de la licence Trial - Essential - Ultimate de SYD |
 | **Paramètres** | Configuration générale |
-
+| **Déconnexion** | Déconnexion de SYD Builder |
 ---
 
 ## Workflow de création d'un dashboard
 
 ```mermaid
 graph TD
-    A[1. Créer un connecteur BDD] --> B[2. Créer des requêtes SQL]
+    A[1. Créer ou identifier un connecteur BDD] --> B[2. Créer des requêtes SQL]
     B --> C[3. Créer des modules]
     C --> D[4. Créer un dashboard]
     D --> E[5. Positionner les modules]
