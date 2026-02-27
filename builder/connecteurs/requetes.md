@@ -116,12 +116,12 @@ ORDER BY date_commande DESC
 
 Pour les graphiques, la requête doit retourner des colonnes correspondant aux axes :
 
-| Type de module                      | Colonnes attendues                               |
-|:------------------------------------|:-------------------------------------------------|
-| **Line, Bar, Pie, Doughnut, Maps ** | 1 colonne as X (labels) + N colonnes Y (valeurs) |
-| **Table**                           | Toutes les colonnes souhaitées                   |
-| **Indicator**                       | 1 valeur as X                                    |
-| **Gauge, Progress**                 | 1 valeur numérique as X (pourcentage)            |
+| Type de module                     | Colonnes attendues                               |
+|:-----------------------------------|:-------------------------------------------------|
+| **Line, Bar, Pie, Doughnut, Maps** | 1 colonne as X (labels) + N colonnes Y (valeurs) |
+| **Table**                          | Toutes les colonnes souhaitées                   |
+| **Indicator**                      | 1 valeur as X                                    |
+| **Gauge, Progress**                | 1 valeur numérique as X (pourcentage)            |
 
 ### Graphiques multi-séries avec la colonne Z
 
