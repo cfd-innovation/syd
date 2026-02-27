@@ -11,7 +11,7 @@ docs/
 ├── index.md                 # Page d'accueil
 ├── builder/                 # Documentation SYD Builder
 │   ├── index.md            
-│   ├── connecteurs/        # Bases de données, webservices, requêtes
+│   ├── connecteurs/        # Bases de données, requêtes
 │   ├── modules/            # Types de modules, affichage, datalabels
 │   ├── dashboards/         # Création et layout
 │   ├── formulaires/        # Champs et formulaires

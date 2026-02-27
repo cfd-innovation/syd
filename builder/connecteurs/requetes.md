@@ -9,37 +9,50 @@ nav_order: 3
 # Requêtes SQL
 {: .fs-8 }
 
-Création et gestion des requêtes SQL
+Inventaire des requêtes SQL configurées dans SYD
 {: .fs-5 .fw-300 }
 
 ---
 
 ## Présentation
 
-Les **requêtes SQL** sont des instructions préparées qui extraient les données des bases configurées. Elles sont ensuite associées aux modules pour alimenter les visualisations.
+La section **Requêtes SQL** n'est pas une source de données à proprement parler, mais un **inventaire centralisé** de toutes les requêtes SQL configurées dans SYD.
+
+Ces requêtes peuvent être créées de deux manières :
+- Via le **Requêtes Builder** (éditeur visuel)
+- Directement depuis la configuration des **modules**
+
+{: .note }
+> L'avantage de cet inventaire est de pouvoir **réutiliser une même requête dans plusieurs modules**, évitant ainsi la duplication et facilitant la maintenance.
 
 ---
 
-## Créer une requête SQL
-
-### Étape 1 : Accéder au formulaire
+## Accéder à l'inventaire
 
 1. Dans le menu **Connecteurs**, sélectionnez **Requêtes**
-2. Cliquez sur le bouton **Nouveau** (ou **+**)
+2. La liste de toutes les requêtes configurées s'affiche
 
-### Étape 2 : Remplir le formulaire
+---
 
-<!-- ![Formulaire requête]({{ site.baseurl }}/assets/img/builder/request-form.png) -->
+## Informations affichées
 
-| Champ | Description | Exemple |
-|:------|:------------|:--------|
-| **Base de données** | Connexion BDD à utiliser | `Production MySQL` |
-| **La requête** | Code SQL | Voir exemples ci-dessous |
-| **Label du jeu de données** | Nom du dataset retourné | `Ventes mensuelles` |
+Pour chaque requête de l'inventaire :
 
-### Étape 3 : Valider
+| Champ | Description |
+|:------|:------------|
+| **Label du jeu de données** | Nom identifiant la requête |
+| **Base de données** | Connexion BDD utilisée |
+| **Requête SQL** | Code SQL de la requête |
 
-Cliquez sur **Valider** pour enregistrer la requête.
+---
+
+## Réutilisation des requêtes
+
+Une requête créée peut être associée à plusieurs modules. Cela permet :
+
+- **Cohérence** : Les mêmes données sont affichées de manière identique dans différents modules
+- **Maintenance simplifiée** : Modifier la requête une seule fois met à jour tous les modules associés
+- **Gain de temps** : Pas besoin de recréer la même requête pour chaque module
 
 ---
 

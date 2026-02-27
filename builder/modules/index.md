@@ -108,8 +108,7 @@ Le formulaire de module est organisé en onglets :
 
 À la création du module, vous devez choisir la source de données :
 
-- **BDD** : Sélectionnez une requête SQL existante
-- **Webservice** : Sélectionnez un connecteur webservice configuré
+- **BDD** : Sélectionnez une requête SQL existante ou créez-en une nouvelle
 
 {: .important }
 > Le type de datasource ne peut pas être modifié après la création du module.

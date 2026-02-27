@@ -42,6 +42,7 @@ L'interface Builder propose les sections suivantes dans sa barre de navigation :
 | **Licence** | Gestion de la licence Trial - Essential - Ultimate de SYD |
 | **Paramètres** | Configuration générale |
 | **Déconnexion** | Déconnexion de SYD Builder |
+
 ---
 
 ## Workflow de création d'un dashboard
@@ -59,11 +60,11 @@ graph TD
 ### Étapes détaillées
 
 1. **Connecteur** : Configurez la connexion à votre base de données source
-2. **Requêtes** : Écrivez les requêtes SQL qui extrairont les données
+2. **Requêtes** : Construisez les requêtes SQL qui extrairont les données
 3. **Modules** : Créez les visualisations en associant requêtes et types de graphiques
-4. **Dashboard** : Créez un nouveau tableau de bord
+4. **Dashboard** : Créez un nouveau tableau de bord en choisissant les modules, les utilisateurs/groupes autorisés et les formulaires attachés. 
 5. **Layout** : Positionnez et redimensionnez les modules sur la grille
-6. **Utilisateurs** : Attribuez les droits d'accès aux utilisateurs concernés
+
 
 ---
 

@@ -3,7 +3,7 @@ layout: default
 title: Requêtes Builder
 parent: Connecteurs
 grand_parent: SYD Builder
-nav_order: 4
+nav_order: 2
 ---
 
 # Requêtes Builder (Éditeur visuel)
