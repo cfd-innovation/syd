@@ -12,8 +12,8 @@ permalink: /
 Solution complète de création et de visualisation de tableaux de bord interactifs.
 {: .fs-6 .fw-300 }
 
-[Commencer avec le Builder](#syd-builder){: .btn .btn-primary .fs-5 .mb-4 .mb-md-0 .mr-2 }
-[Découvrir le Visualizer](#syd-visualizer){: .btn .fs-5 .mb-4 .mb-md-0 }
+[Commencer avec le Builder]({{ site.baseurl }}/builder/){: .btn .btn-primary .fs-5 .mb-4 .mb-md-0 .mr-2 }
+[Découvrir le Visualizer]({{ site.baseurl }}/visualizer/){: .btn .fs-5 .mb-4 .mb-md-0 }
 
 ---
 
