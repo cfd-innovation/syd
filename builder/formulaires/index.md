@@ -44,7 +44,7 @@ Formulaire
 ### Étape 1 : Accéder au formulaire
 
 1. Dans le menu, cliquez sur **Formulaires**
-2. Cliquez sur **Nouveau** (ou **+**)
+2. Cliquez sur **Nouveau** 
 
 ### Étape 2 : Configuration
 
@@ -103,7 +103,7 @@ Liste alimentée par une requête SQL.
 
 ### Accès
 
-1. Dans le menu **Formulaires**, cliquez sur **Champs**
+1. Dans le menu **Formulaires**, cliquez sur **Gestion des champs de formulaire**
 2. Cliquez sur **Nouveau**
 
 ### Configuration commune
@@ -118,32 +118,61 @@ Liste alimentée par une requête SQL.
 
 ## Utilisation dans les requêtes
 
-Les valeurs des champs de formulaire sont injectées dans les requêtes SQL via des **paramètres**.
+Les valeurs des champs de formulaire sont injectées dans les requêtes SQL des modules via des **paramètres**. La syntaxe dépend du type de champ (valeur unique ou valeurs multiples).
 
-### Syntaxe
+### Syntaxe pour valeur unique
+
+Pour les champs **Input** ou **Select** sans sélection multiple :
 
 ```sql
-WHERE colonne = '{{nom_du_champ}}'
+###nom_du_champ###
 ```
+
+**Exemple :**
+```sql
+SELECT * FROM table WHERE attribut = ###nom_param###
+```
+
+### Syntaxe pour valeurs multiples
+
+Pour les champs **Select** ou **Select Dynamic** avec sélection multiple activée :
+
+```sql
+&&&nom_du_champ&&&
+```
+
+**Exemple :**
+```sql
+SELECT * FROM table WHERE attribut IN (&&&nom_param&&&)
+```
+
+{: .warning }
+> Les deux types de paramètres (`###` et `&&&`) **ne peuvent pas être utilisés dans la même requête**.
 
 ### Exemple complet
 
 **Champs de formulaire :**
-- `date_debut` (Input)
-- `date_fin` (Input)
-- `region` (Select)
+- `annee` (Select - valeur unique)
+- `regions` (Select Dynamic - valeurs multiples)
 
-**Requête SQL du module :**
+**Requête SQL du module (valeur unique) :**
 ```sql
 SELECT mois, SUM(montant) as total
 FROM ventes
-WHERE date_vente BETWEEN '{{date_debut}}' AND '{{date_fin}}'
-  AND region = '{{region}}'
+WHERE annee = ###annee###
 GROUP BY mois
 ```
 
+**Requête SQL du module (valeurs multiples) :**
+```sql
+SELECT region, SUM(montant) as total
+FROM ventes
+WHERE region IN (&&&regions&&&)
+GROUP BY region
+```
+
 {: .important }
-> Le nom du champ dans la requête (`{{nom_du_champ}}`) doit correspondre exactement au **Nom du champ** défini dans le formulaire.
+> Le nom du paramètre dans la requête doit correspondre exactement au **Nom du champ** défini dans le formulaire.
 
 ---
 
@@ -154,6 +183,108 @@ GROUP BY mois
 3. Validez
 
 Le formulaire apparaîtra en haut du dashboard dans le Visualizer.
+
+---
+
+## Formulaires chaînés
+
+Les **formulaires chaînés** permettent de créer une dépendance entre deux listes déroulantes : la sélection dans un premier champ filtre dynamiquement les options disponibles dans un second champ.
+
+### Cas d'utilisation
+
+- **Région → Département** : Sélectionner une région filtre la liste des départements
+- **Catégorie → Produit** : Sélectionner une catégorie filtre la liste des produits
+- **Année → Mois** : Sélectionner une année filtre les mois disponibles
+
+### Configuration
+
+Le chaînage est configuré sur le **champ enfant** (celui qui dépend de l'autre).
+
+#### Étape 1 : Créer le champ parent
+
+Créez un champ de type **Select** ou **Select Dynamic** qui servira de filtre principal.
+
+**Exemple** : Champ `region` (Select Dynamic)
+```sql
+SELECT DISTINCT region AS label, region AS value FROM zones
+```
+
+#### Étape 2 : Créer le champ enfant chaîné
+
+1. Créez un nouveau champ de type **Select Dynamic**
+2. Cochez l'option **Champ de formulaire chaîné**
+3. Dans **Champ de formulaire à lier**, sélectionnez le champ parent (`region`)
+4. Rédigez la requête en utilisant la syntaxe de paramètre spéciale
+
+### Syntaxe des paramètres chaînés
+
+{: .important }
+> Dans les requêtes de champs chaînés, le paramètre est toujours nommé **`value`** (et non le nom du champ parent).
+
+#### Pour un champ parent à valeur unique
+
+```sql
+###value###
+```
+
+**Exemple** : Champ `departement` chaîné à `region`
+```sql
+SELECT DISTINCT departement AS label, departement AS value 
+FROM zones 
+WHERE region = ###value###
+```
+
+#### Pour un champ parent à valeurs multiples
+
+```sql
+&&&value&&&
+```
+
+**Exemple** : Champ `departement` chaîné à `region` (multiple)
+```sql
+SELECT DISTINCT departement AS label, departement AS value 
+FROM zones 
+WHERE region IN (&&&value&&&)
+```
+
+{: .warning }
+> Les deux types de paramètres (`###value###` et `&&&value&&&`) ne peuvent pas être utilisés dans la même requête.
+
+### Exemple complet : Région → Département
+
+#### 1. Champ parent : `region`
+
+| Configuration | Valeur |
+|:--------------|:-------|
+| Nom du champ | `region` |
+| Label | `Région` |
+| Type | Select Dynamic |
+| Connecteur BDD | (votre connecteur) |
+| Requête | `SELECT DISTINCT region AS label, region AS value FROM zones` |
+
+#### 2. Champ enfant : `departement`
+
+| Configuration | Valeur |
+|:--------------|:-------|
+| Nom du champ | `departement` |
+| Label | `Département` |
+| Type | Select Dynamic |
+| Connecteur BDD | (votre connecteur) |
+| Requête | `SELECT DISTINCT departement AS label, departement AS value FROM zones WHERE region = ###value###` |
+| Champ de formulaire chaîné | ✅ Coché |
+| Champ de formulaire à lier | `region` |
+
+#### 3. Comportement dans le Visualizer
+
+1. L'utilisateur sélectionne une région (ex: "Île-de-France")
+2. La liste des départements se met à jour automatiquement pour n'afficher que ceux de la région sélectionnée (75, 77, 78, 91, 92, 93, 94, 95)
+3. L'utilisateur peut alors sélectionner un département parmi ceux filtrés
+
+### Bonnes pratiques pour les champs chaînés
+
+- **Ordre dans le formulaire** : Placez le champ parent avant le champ enfant
+- **Valeur par défaut** : Configurez une valeur par défaut sur le champ parent pour que le champ enfant soit alimenté dès le chargement
+- **Performance** : Indexez les colonnes utilisées pour le filtrage dans vos tables
 
 ---
 
