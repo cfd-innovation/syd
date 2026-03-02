@@ -26,11 +26,11 @@ Un **Dashboard** (tableau de bord) est un regroupement de modules affichés sur 
 ### Étape 1 : Accéder au formulaire
 
 1. Dans le menu, cliquez sur **Dashboards**
-2. Cliquez sur **Nouveau** (ou **+**)
+2. Cliquez sur **Nouveau** 
 
 ### Étape 2 : Configuration générale
 
-<!-- ![Formulaire dashboard]({{ site.baseurl }}/assets/img/builder/dashboard-form.png) -->
+![Formulaire dashboard]({{ site.baseurl }}/assets/img/builder/builder_create_dashboard.png)
 
 | Champ | Description | Exemple |
 |:------|:------------|:--------|
@@ -67,7 +67,7 @@ Choisissez les modules à afficher sur le dashboard. L'ordre et le positionnemen
 
 Les catégories permettent d'organiser vos dashboards par thèmes. Sélectionnez :
 - **NO_CATEGORY** : Pas de catégorie (dashboard non classé)
-- Une catégorie existante : Voir [Gestion des catégories]({{ site.baseurl }}/builder/categories/)
+- Une catégorie existante : Voir [Gestion des catégories]({{ site.baseurl }}/builder/dashboards/categories/)
 
 ### Formulaire
 
@@ -113,6 +113,6 @@ Une fois le dashboard créé, vous pouvez :
 
 - [Layout des modules]({{ site.baseurl }}/builder/dashboards/layout/)
 - [Gestion des utilisateurs]({{ site.baseurl }}/builder/dashboards/utilisateurs/)
-- [Catégories]({{ site.baseurl }}/builder/categories/)
+- [Catégories]({{ site.baseurl }}/builder/dashboards/categories/)
 - [Formulaires]({{ site.baseurl }}/builder/formulaires/)
 

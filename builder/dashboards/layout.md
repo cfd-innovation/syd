@@ -31,7 +31,7 @@ L'écran de **Layout** permet de configurer la disposition des modules sur un da
 
 ## Interface de configuration
 
-<!-- ![Layout dashboard]({{ site.baseurl }}/assets/img/builder/dashboard-layout.png) -->
+![Layout dashboard]({{ site.baseurl }}/assets/img/builder/builder_layout_dashboard.png)
 
 L'écran de layout affiche la liste des modules du dashboard. Chaque module dispose de :
 - Une **poignée de déplacement** (icône flèches) pour réordonner
