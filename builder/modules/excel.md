@@ -91,7 +91,7 @@ Lorsque l'export est activé, un bouton Excel apparaît dans la barre d'outils d
 
 Le fichier exporté est nommé selon le format :
 ```
-[Titre du module]_[Date].xlsx
+[Titre du module].xlsx
 ```
 
 ---

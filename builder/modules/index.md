@@ -20,7 +20,7 @@ Création et configuration des visualisations
 Les **modules** sont les briques de base de vos tableaux de bord. Chaque module représente une visualisation de données : graphique, tableau, indicateur, carte, etc.
 
 Un module est composé de :
-- **Source de données** : requête SQL ou webservice
+- **Source de données** : requête SQL 
 - **Type de visualisation** : graphique, tableau, indicateur...
 - **Configuration d'affichage** : couleurs, légendes, options...
 - **Options avancées** : datalabels, export Excel, rafraîchissement...
@@ -134,9 +134,72 @@ Le formulaire de module est organisé en onglets :
 
 ---
 
-## Voir aussi
 
-- [Options d'affichage]({{ site.baseurl }}/builder/modules/affichage/)
-- [Datalabels]({{ site.baseurl }}/builder/modules/datalabels/)
-- [Export Excel]({{ site.baseurl }}/builder/modules/excel/)
 
+## Dupliquer un module
+
+La duplication permet de créer rapidement un nouveau module basé sur un module existant, en conservant toute sa configuration (type, requêtes, options d'affichage, etc.).
+
+### Comment dupliquer un module
+
+1. Dans la liste des modules, repérez le module à dupliquer
+2. Cliquez sur le bouton **Dupliquer** (icône <i class="fas fa-clone"></i>) dans la colonne d'actions
+3. Dans la fenêtre qui s'ouvre, saisissez le **nom du nouveau module**
+4. Cliquez sur **Valider**
+
+{: .note }
+> Le module dupliqué est une copie indépendante : toute modification sur le nouveau module n'affecte pas l'original et inversement.
+
+### Cas d'utilisation
+
+- Créer des variantes d'un même graphique avec des filtres différents
+- Adapter un module existant pour un autre dashboard
+- Tester des modifications sans impacter le module original
+
+---
+
+## Prévisualiser un module
+
+La prévisualisation permet de visualiser le rendu d'un module directement depuis la liste des modules, sans avoir à l'intégrer à un dashboard.
+
+### Comment prévisualiser
+
+1. Dans la liste des modules, repérez le module à prévisualiser
+2. Cliquez sur le bouton **Prévisualiser** (icône <i class="fas fa-eye"></i>) dans la colonne "Prévisualisation"
+3. Le module s'ouvre dans un nouvel onglet avec son rendu final
+
+{: .note }
+> La prévisualisation s'exécute dans l'environnement du Visualizer, vous voyez donc exactement ce que verront les utilisateurs finaux.
+
+### Informations affichées
+
+La liste des modules affiche également le **statut d'utilisation** de chaque module :
+- ![in use](https://img.shields.io/badge/-in%20use-success) : Le module est utilisé dans au moins un dashboard
+- ![not in use](https://img.shields.io/badge/-not%20in%20use-danger) : Le module n'est utilisé dans aucun dashboard
+
+---
+
+## Filtres de recherche
+
+Lorsque le nombre de modules devient important, les filtres de recherche permettent de retrouver rapidement un module spécifique.
+
+### Accéder aux filtres
+
+1. Dans la liste des modules, cliquez sur le bouton **Filtres de recherche**
+2. Le panneau de filtres se déplie
+
+### Filtres disponibles
+
+| Filtre | Description |
+|:-------|:------------|
+| **Créateur du module** | Filtrer par nom de l'utilisateur ayant créé le module |
+| **Label du connecteur** | Filtrer par le label de la source de données (base de données) |
+
+### Utilisation
+
+- Les filtres s'appliquent **en temps réel** lors de la saisie
+- Les filtres peuvent être combinés pour affiner la recherche
+- Cliquez sur **Réinitialiser les filtres** pour effacer tous les critères
+
+{: .note }
+> Les filtres sont cumulatifs : si vous saisissez un créateur ET un label de connecteur, seuls les modules correspondant aux deux critères seront affichés.

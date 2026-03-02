@@ -115,6 +115,8 @@ Un bouton **Test** est disponible pour vérifier la connexion à la base de donn
 
 ---
 
+![Liste des connecteurs]({{ site.baseurl }}/assets/img/builder/builder_liste_connecteurs.png)
+
 ## Dépannage
 
 | Problème | Solution possible |
