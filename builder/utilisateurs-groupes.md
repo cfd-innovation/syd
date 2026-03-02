@@ -47,6 +47,32 @@ SYD propose deux niveaux de gestion des accès :
 {: .warning }
 > Les utilisateurs administrateurs ont accès à toutes les fonctionnalités du Builder et peuvent voir tous les dashboards.
 
+### Ordre d'affichage des dashboards
+
+Pour chaque utilisateur, il est possible de définir l'**ordre d'affichage des dashboards** dans le Visualizer. Cet ordre détermine l'organisation du menu de navigation pour l'utilisateur.
+
+#### Accéder à la configuration
+
+1. Dans la liste des utilisateurs, cliquez sur le bouton **Layout** de l'utilisateur concerné
+2. La fenêtre "Formulaire Layout du user" s'ouvre
+
+#### Fonctionnalités disponibles
+
+| Action | Description |
+|:-------|:------------|
+| **Réorganiser** | Glissez-déposez les dashboards pour modifier leur ordre |
+| **Ajouter** | Sélectionnez un dashboard dans la liste déroulante et cliquez sur **+** |
+| **Supprimer** | Cliquez sur le bouton de suppression (❌) à côté du dashboard |
+
+{: .note }
+> Les dashboards attribués via un **groupe** ne peuvent pas être supprimés individuellement depuis cette interface (bouton désactivé). Pour les retirer, il faut modifier l'appartenance au groupe.
+
+#### Cas d'utilisation
+
+- **Prioriser** les dashboards les plus utilisés en les plaçant en haut de la liste
+- **Personnaliser** l'expérience utilisateur en fonction de son rôle
+- **Ajouter** des dashboards spécifiques à un utilisateur sans passer par les groupes
+
 ---
 
 ## Groupes
@@ -134,6 +160,30 @@ Les utilisateurs se connectent avec leur identifiant configuré dans SYD.
 
 {: .note }
 > Le mot de passe peut être géré via une authentification externe (LDAP, SSO) selon la configuration.
+
+### Authentification IBM i (DB2 for i)
+
+Lorsque la base de données système de SYD est **DB2 for i**, l'authentification fonctionne de manière intégrée avec l'IBM i :
+
+| Élément SYD | Correspondance IBM i |
+|:------------|:---------------------|
+| **Utilisateur SYD** | Profil utilisateur IBM i (USRPRF) |
+| **Mot de passe** | Mot de passe du profil IBM i |
+
+#### Fonctionnement
+
+- Les **utilisateurs SYD** représentent les **profils IBM i (USRPRF)** autorisés à accéder à l'application
+- La **vérification du couple profil/mot de passe** est gérée directement par l'IBM i
+- **Aucun mot de passe supplémentaire** n'est à gérer dans SYD : l'authentification est déléguée à l'IBM i
+
+{: .important }
+> Dans ce mode, créer un utilisateur dans SYD revient à **autoriser un profil IBM i existant** à utiliser l'application. Le nom d'utilisateur saisi doit correspondre exactement au nom du profil IBM i (USRPRF).
+
+#### Avantages
+
+- **Authentification centralisée** : les utilisateurs utilisent leurs identifiants IBM i habituels
+- **Sécurité renforcée** : la gestion des mots de passe est assurée par l'IBM i (règles de complexité, expiration, etc.)
+- **Simplification** : pas de double gestion des mots de passe
 
 ### Dashboards publics
 
