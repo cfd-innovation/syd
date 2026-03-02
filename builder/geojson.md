@@ -102,32 +102,137 @@ Une fois importé, le fichier GeoJSON peut être associé à un module de type *
 
 ---
 
-## Correspondance données / zones
+## Correspondance données / zones (Mapping)
 
-Pour que les données s'affichent correctement sur la carte, il faut une **correspondance** entre :
-- Les valeurs de votre requête SQL (colonne de jointure)
-- Les propriétés du fichier GeoJSON (code, nom, etc.)
+Pour que les données s'affichent correctement sur la carte, il est essentiel de configurer la **correspondance** entre les résultats de votre requête SQL et les zones définies dans le fichier GeoJSON.
 
-### Exemple
+### Principe du mapping
 
-**Requête SQL :**
+Le système utilise une **clé de correspondance** pour associer chaque valeur de votre requête à une zone géographique :
+
+| Côté Requête SQL | Côté GeoJSON |
+|:-----------------|:-------------|
+| Colonne `X` (alias obligatoire) | Propriété du GeoJSON (configurable) |
+| Colonne `Y` (alias obligatoire) | Valeur à afficher sur la carte |
+
+### Configuration dans les Utilities
+
+Dans l'onglet **Utilities** d'un module de type Map, le champ **Nom de la propriété du geojson** définit quelle propriété du fichier GeoJSON sera utilisée pour faire la correspondance.
+
+{: .important }
+> La valeur de ce champ doit correspondre **exactement** au nom d'une propriété présente dans le fichier GeoJSON (sensible à la casse).
+
+### Format de la requête SQL
+
+La requête doit retourner **deux colonnes** avec les alias `X` et `Y` :
+
+| Alias | Description | Rôle |
+|:------|:------------|:-----|
+| `X` | Clé de correspondance | Doit correspondre à la valeur de la propriété GeoJSON |
+| `Y` | Valeur numérique | Valeur affichée et utilisée pour la coloration |
+
 ```sql
-SELECT code_departement, SUM(ventes) as total
+SELECT code_zone AS X, SUM(montant) AS Y
+FROM ma_table
+GROUP BY code_zone
+```
+
+{: .warning }
+> Les alias `X` et `Y` sont **obligatoires** et sensibles à la casse (majuscules).
+
+### Structure du fichier GeoJSON
+
+Chaque zone (feature) du fichier GeoJSON possède des **propriétés** (properties) qui peuvent servir de clé de correspondance :
+
+```json
+{
+  "type": "Feature",
+  "properties": {
+    "code": "75",
+    "nom": "Paris",
+    "region": "Île-de-France"
+  },
+  "geometry": { ... }
+}
+```
+
+Dans cet exemple, vous pouvez utiliser `code`, `nom` ou `region` comme propriété de correspondance.
+
+### Exemple complet
+
+#### 1. Fichier GeoJSON (départements)
+
+```json
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "code": "75",
+        "nom": "Paris"
+      },
+      "geometry": { ... }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "code": "69",
+        "nom": "Rhône"
+      },
+      "geometry": { ... }
+    }
+  ]
+}
+```
+
+#### 2. Configuration dans les Utilities
+
+| Champ | Valeur |
+|:------|:-------|
+| Choix du GeoJSON | `Départements France` |
+| Nom de la propriété du geojson | `code` |
+| Choix du jeu de couleur | `Bleu` |
+
+#### 3. Requête SQL
+
+```sql
+SELECT code_departement AS X, SUM(ventes) AS Y
 FROM ventes_par_zone
 GROUP BY code_departement
 ```
 
-**Propriété GeoJSON :**
-```json
-{
-  "properties": {
-    "code": "75",
-    "nom": "Paris"
-  }
-}
-```
+#### 4. Résultat
 
-La correspondance se fait sur le champ `code` / `code_departement`.
+| X | Y |
+|:--|--:|
+| 75 | 15000 |
+| 69 | 12500 |
+
+Le système fait correspondre :
+- `X = 75` → `properties.code = "75"` → Zone Paris colorée selon la valeur 15000
+- `X = 69` → `properties.code = "69"` → Zone Rhône colorée selon la valeur 12500
+
+### Jeux de couleurs disponibles
+
+| Couleur | Code | Dégradé |
+|:--------|:-----|:--------|
+| **Rouge** | `red` | Du blanc au rouge foncé |
+| **Vert** | `green` | Du blanc au vert foncé |
+| **Bleu** | `blue` | Du blanc au bleu foncé |
+
+L'intensité de la couleur varie en fonction de la valeur `Y` : les valeurs plus élevées apparaissent dans des teintes plus foncées.
+
+### Résolution des problèmes courants
+
+| Problème | Cause probable | Solution |
+|:---------|:---------------|:---------|
+| Zones non colorées | Pas de correspondance trouvée | Vérifier que les valeurs de `X` correspondent exactement aux valeurs de la propriété GeoJSON |
+| Erreur d'affichage | Alias incorrects | S'assurer que les colonnes sont nommées `X` et `Y` (majuscules) |
+| Aucune donnée | Propriété incorrecte | Vérifier le nom de la propriété dans les utilities et dans le fichier GeoJSON |
+
+{: .note }
+> Pour vérifier les propriétés disponibles dans votre fichier GeoJSON, ouvrez-le sur [geojson.io](https://geojson.io/) et cliquez sur une zone pour voir ses propriétés.
 
 ---
 
