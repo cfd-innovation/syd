@@ -17,13 +17,15 @@ Configuration des sources de données
 
 ## Présentation
 
-Les **connecteurs** permettent de configurer les différentes sources de données qui alimenteront vos modules et dashboards. SYD supporte les éléments suivants :
+Les **connecteurs** permettent de configurer les différentes sources de données qui alimenteront vos modules et dashboards. 
 
-| Type | Description |
-|:-----|:------------|
-| **Bases de données** | Connexions directes à des SGBD (MySQL, DB2, SQL Server...) |
-| **Requêtes Builder** | Éditeur visuel de requêtes SQL |
-| **Requêtes SQL** | Inventaire de toutes les requêtes SQL configurées dans SYD |
+Le menu Connecteurs SYD permet d'accéder aux éléments suivants :
+
+| Option               | Description                                                            |
+|:---------------------|:-----------------------------------------------------------------------|
+| **Bases de données** | Gestion des connexions directes à des SGBD (MySQL, DB2, SQL Server...) |
+| **Requêtes Builder** | Éditeur visuel de requêtes SQL s'appuyant sur les connecteurs          |
+| **Requêtes SQL**     | Inventaire de toutes les requêtes SQL configurées dans SYD             |
 
 ---
 
@@ -37,7 +39,7 @@ Dans le menu de navigation du Builder, cliquez sur **Connecteurs** pour accéder
 
 ## Sous-sections
 
-Consultez les pages détaillées pour chaque type de connecteur :
+Consultez les pages détaillées pour chaque option :
 
 - [Bases de données]({{ site.baseurl }}/builder/connecteurs/databases/) - Configuration des connexions BDD
 - [Requêtes Builder]({{ site.baseurl }}/builder/connecteurs/requetes-builder/) - Éditeur visuel de requêtes

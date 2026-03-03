@@ -1,9 +1,9 @@
 ---
 layout: default
 title: Catégories
-parent: SYD Builder
-nav_order: 6
-permalink: /builder/categories/
+parent: Dashboards
+grand_parent: SYD Builder
+nav_order: 3
 ---
 
 # Catégories de dashboards

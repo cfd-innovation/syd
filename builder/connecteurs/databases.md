@@ -42,7 +42,7 @@ Les connecteurs de base de données permettent d'établir des connexions directe
 ### Étape 1 : Accéder au formulaire
 
 1. Dans le menu **Connecteurs**, sélectionnez **Bases de données**
-2. Cliquez sur le bouton **Nouveau** (ou **+**)
+2. Cliquez sur le bouton **Nouveau** 
 
 ### Étape 2 : Remplir le formulaire
 

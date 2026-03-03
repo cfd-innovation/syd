@@ -70,7 +70,7 @@ Dans le menu de navigation, cliquez sur **Modules** pour voir la liste des modul
 
 ### Étape 2 : Nouveau module
 
-Cliquez sur le bouton **Nouveau** (ou **+**) pour ouvrir le formulaire de création.
+Cliquez sur le bouton **Nouveau** pour ouvrir le formulaire de création.
 
 ### Étape 3 : Configuration
 
