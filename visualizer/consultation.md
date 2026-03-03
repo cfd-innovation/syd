@@ -108,7 +108,6 @@ Pour un graphique avec les séries "Ventes 2023" et "Ventes 2024" :
 |:---------|:--------------------------------------------------------------|
 | **Tri** | (Option à activer) Cliquez sur l'en-tête pour trier           |
 | **Recherche** | (Option à activer) Utilisez le champ de recherche (si activé) |
-| **Pagination** | (Option à activer) Naviguez entre les pages                   |
 
 
 ![Tableau Visualizer]({{ site.baseurl }}/assets/img/visualizer/tableaux_visualizer.png)
@@ -152,7 +151,6 @@ Si le dashboard dispose de filtres :
 | Type | Usage | Exemple |
 |:-----|:------|:--------|
 | **Texte** | Saisie libre | Recherche par nom |
-| **Date** | Sélection de date | Période de début/fin |
 | **Liste simple** | Un seul choix | Région |
 | **Liste multiple** | Plusieurs choix | Plusieurs produits |
 
@@ -164,16 +162,12 @@ Les filtres peuvent être affichés en mode **compact** (réduit) pour gagner de
 
 - Les filtres sont repliés et occupent moins de place
 - Les **valeurs sélectionnées** s'affichent sous forme de **badges** directement visibles
-- Cliquez sur un badge pour modifier rapidement la valeur du filtre correspondant
 
 {: .note }
 > Le mode compact est particulièrement utile lorsque le dashboard contient de nombreux filtres ou pour maximiser l'espace d'affichage des modules.
 
 ![Filtres badge Visualizer]({{ site.baseurl }}/assets/img/visualizer/filtres_badge_visualizer.png)
 
-### Réinitialisation
-
-Pour revenir aux valeurs par défaut, rechargez la page.
 
 ---
 
