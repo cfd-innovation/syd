@@ -56,7 +56,15 @@ Les connecteurs de base de données permettent d'établir des connexions directe
 | **Host** | Adresse du serveur | `192.168.1.100` ou `localhost` |
 | **Profil** | Nom d'utilisateur de connexion | `admin` |
 | **Mot de passe** | Mot de passe de connexion | `********` |
-| **DB Name** | Nom de la base de données | `ma_base` |
+| **DB Name** | Nom de la base de données ou liste de bibliothèques | `ma_base` ou `MABIB1 MABIB2 MABIB3` |
+
+### Option de profil connecté
+
+Une case à cocher est disponible : **Les modules utilisant cette connexion s'exécutent avec le profil connecté**.
+
+- Si la case est cochée, les modules utilisent le profil de l'utilisateur connecté.
+- Si la case est décochée, les modules utilisent le profil du connecteur.
+- En cas de SSO, si aucun profil connecté n'est disponible, les droits du profil de service seront utilisés.
 
 ### Étape 3 : Valider
 
@@ -80,6 +88,14 @@ odbc:DRIVER={IBM i Access ODBC Driver};SYSTEM=host;CCSID=1208;DEBUG=524288;DBQ=d
 ```
 mysql:host=servername;dbname=myDB
 ```
+
+### Listes de bibliothèques (DB Name)
+
+Vous pouvez renseigner une ou plusieurs bibliothèques séparées par un espace.
+
+- Fonctionne uniquement pour les types **DB2** et **PDO ODBC**.
+- Pour les autres types, seule la première bibliothèque sera utilisée.
+- Exemple : `MABIB1 MABIB2 MABIB3`
 
 ---
 
