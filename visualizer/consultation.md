@@ -180,6 +180,13 @@ Chaque module peut disposer d'outils dans sa barre de titre :
 | ![Icone refresh]({{ site.baseurl }}/assets/img/visualizer/icone_refresh.png) | **Refresh** | Rafraîchir les données du module |
 | ![Icone excel]({{ site.baseurl }}/assets/img/visualizer/icone_excel.png)     | **Excel** | Exporter les données en Excel |
 | ![Icone search]({{ site.baseurl }}/assets/img/visualizer/icone_search.png)   | **Recherche** | Champ de recherche (tableaux) |
+| Icône loupe | **Zoom** | Afficher le module en grand sur toute la page |
+
+### Utiliser le zoom module
+
+1. Cliquez sur l'icône **loupe** dans la barre d'outils du module.
+2. Le module s'affiche en grand sur toute la page.
+3. Cliquez à nouveau sur l'icône pour revenir à l'affichage normal.
 
 ---
 
@@ -206,4 +213,3 @@ L'interface s'adapte à la taille de l'écran :
 
 {: .note }
 > Pour une meilleure expérience, l'utilisation sur écran large est recommandée pour les dashboards complexes.
-

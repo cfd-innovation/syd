@@ -101,6 +101,13 @@ Le formulaire de module est organisé en onglets :
 | **Refresh (ms)** | Intervalle de rafraîchissement automatique (0 = désactivé) |
 | **Barre de recherche** | Afficher une barre de recherche (certains types) |
 | **Bouton refresh** | Afficher un bouton de rafraîchissement manuel |
+| **Bouton zoom** | Afficher l'icône loupe pour agrandir le module dans le Visualizer |
+
+### Zoom du module
+
+Pour activer le zoom d'un module, cochez l'option **Bouton zoom** dans la configuration du module.
+
+Quand cette option est activée, le Visualizer affiche une icône en forme de loupe dans la barre d'outils du module. Cette icône permet d'afficher le module en grand sur toute la page.
 
 ---
 

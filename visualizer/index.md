@@ -106,9 +106,16 @@ Cliquez sur les éléments de la légende pour :
 
 ### Zoom (certains graphiques)
 
-Pour les graphiques supportant le zoom (maps):
+Pour les graphiques supportant le zoom (maps) :
 - **Molette** : Zoom avant/arrière
 - **Clic glissé** : Sélection d'une zone
+
+### Zoom module (plein écran)
+
+Si l'option a été activée dans le Builder sur le module, une icône **loupe** apparaît dans sa barre d'outils.
+
+- **Clic sur la loupe** : le module passe en affichage agrandi sur toute la page
+- **Clic à nouveau** : retour à l'affichage normal du dashboard
 
 ---
 
